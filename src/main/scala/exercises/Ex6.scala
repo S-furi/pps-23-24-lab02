@@ -2,7 +2,7 @@ package exercises
 
 import scala.annotation.tailrec
 
-object Ex6 extends App {
+object Ex6 {
     @tailrec
     def gcd(a: Int, b: Int): Int = (a, b) match
         case (a, b) if a == 0 || b == 0 => a

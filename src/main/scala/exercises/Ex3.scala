@@ -1,6 +1,6 @@
 package exercises
 
-object Ex3 extends App {
+object Ex3 {
     // Ex. a.I)
     def positive(n: Int): String = n match
         case n if n >= 0 => "positive"
