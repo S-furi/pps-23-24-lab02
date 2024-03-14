@@ -1,7 +1,7 @@
 package exercises
 
 object Ex4 {
-    val predicate: (Int, Int, Int) => Boolean = (x, y, z) => z == y && x <= y
+    private val predicate: (Int, Int, Int) => Boolean = (x, y, z) => z == y && x <= y
 
     val p1: Int => Int => Int => Boolean = x => y => z => predicate(x, y, z)
 
