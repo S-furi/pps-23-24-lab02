@@ -1,18 +1,25 @@
 package exercises
 
+// Task 1: svolto individualmente
 object Ex3Sol:
+    // a.I
     def positive(n: Int): String = n match
         case n if n >= 0 => "positive"
         case n if n < 0 => "negative"
 
+    // a.II
     val positiveVal: (Int) => String = n => n match
         case n if n >= 0 => "positive"
         case n if n < 0 => "negative"
 
+    // b.I
     def neg(p: String => Boolean): String => Boolean = s => !p(s)
+    // b.II
     val negVal: (String => Boolean) => (String => Boolean) = p => (s => !p(s))
+    // c
     def negGeneric[X](p: X => Boolean): X => Boolean = s => !p(s)
 
+// Task 2: svolto individualmente
 object Ex4Sol:
     private val predicate: (Int, Int, Int) => Boolean = (x, y, z) => z == y && x <= y
     val p1: Int => Int => Int => Boolean = x => y => z => predicate(x, y, z)
@@ -20,6 +27,7 @@ object Ex4Sol:
     def p3(x: Int)(y: Int)(z: Int): Boolean = predicate(x, y, z)
     def p4(x: Int, y: Int, z: Int): Boolean = predicate(x, y, z)
 
+// Task 3: svolto individualmente
 object Ex5Sol:
     def compose(f: Int => Int, g: Int => Int): Int => Int = n => f(g(n))
     /**
@@ -27,6 +35,7 @@ object Ex5Sol:
       */
     def composeGeneric[A, B, C](f: A => B, g: C => A): C => B = in => f(g(in))
 
+// Task 4: svolto individualmente
 object Ex6Sol:
     @annotation.tailrec
     def gcd(a: Int, b: Int): Int = (a, b) match
@@ -34,6 +43,7 @@ object Ex6Sol:
         case (a, b) if a > b => gcd(b, a % b)
         case (a, b) if a < b => gcd(a, b % a)
 
+// Task 5: svolto individualmente
 object Ex7Sol:
     enum Shape:
         case Rectangle(w: Double, h: Double)
@@ -51,6 +61,7 @@ object Ex7Sol:
             case Circle(r) => Circle(r * alpha)
             case Square(e) => Square(e * alpha)
 
+// Task 6: svolto individualmente
 object Optionals:
   /**
    * Optional is a type that represents a value that may or may not be present.
