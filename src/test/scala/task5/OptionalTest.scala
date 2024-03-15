@@ -37,3 +37,11 @@ class OptionalTest:
     val result = Optional.map(nonEmpty, _ + 1)
     assertEquals(1, Optional.orElse(result, 1))
   }
+
+  @Test def mapShouldApplyTypesTransformation(): Unit = {
+    val opt = Optional.Maybe("foo")
+    val result = Optional.map(opt, _.length())
+    val expectedLength = "foo".length()
+
+    assertEquals(expectedLength, Optional.orElse(result, expectedLength))
+  }
