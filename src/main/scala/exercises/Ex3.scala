@@ -12,10 +12,10 @@ object Ex3 {
         case n if n < 0 => "negative"
 
     // Ex. b.I)
-    def neg(predicate: String => Boolean): String => Boolean = s => !predicate(s)
+    def neg(p: String => Boolean): String => Boolean = s => !p(s)
 
     // Ex. b.II)
-    val negVal: (String => Boolean) => (String => Boolean) = pred => (s => !pred(s))
+    val negVal: (String => Boolean) => (String => Boolean) = p => (s => !p(s))
 
     // Ex c
     def negGeneric[X](p: X => Boolean): X => Boolean = s => !p(s)

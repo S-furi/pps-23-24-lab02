@@ -2,18 +2,18 @@ package exercises
 
 object Ex7 {
     enum Shape:
-        case Rectangle(width: Double, height: Double)
-        case Circle(radius: Double)
-        case Square(edge: Double)
+        case Rectangle(w: Double, h: Double)
+        case Circle(r: Double)
+        case Square(e: Double)
 
     object Shape:
         def perimeter(s: Shape): Double = s match
-            case Rectangle(width, height) => (width * 2) + (height * 2)
-            case Circle(radius) => 2 * Math.PI * radius
-            case Square(edge) => Math.pow(edge, 2)
+            case Rectangle(w, h) => (w * 2) + (h * 2)
+            case Circle(r) => 2 * Math.PI * r
+            case Square(e) => Math.pow(e, 2)
 
         def scale(s: Shape, alpha: Double): Shape = s match
-            case Rectangle(width, height) => Rectangle(width * alpha, height * alpha)
-            case Circle(radius) => Circle(radius * alpha)
-            case Square(edge) => Square(edge * alpha)
+            case Rectangle(w, h) => Rectangle(w * alpha, h * alpha)
+            case Circle(r) => Circle(r * alpha)
+            case Square(e) => Square(e * alpha)
 }
